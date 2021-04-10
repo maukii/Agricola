@@ -18,4 +18,5 @@ for (var i = 0; i < PLAYER_AMOUNT; ++i)
 		
 	plr.controller = global.controllers[i];
 	plr.bounds = playerBounds[i];
+	plr.image_angle = 90*i;
 }

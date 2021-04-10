@@ -38,8 +38,14 @@ function handMovement()
 	}
 	else
 	{
-		hsp = lengthdir_x(abs(joyH*spd), moveDir);
-		vsp = lengthdir_y(abs(joyV*spd), moveDir)
+		var finalSpd = spd;
+		if (heldItem != noone)
+		{
+			finalSpd = spd / heldItem.weight;
+		}
+		
+		hsp = lengthdir_x(abs(joyH*finalSpd), moveDir);
+		vsp = lengthdir_y(abs(joyV*finalSpd), moveDir)
 	}
 	
 	//Restrict movement to bounds
@@ -56,12 +62,22 @@ function handGrabbing()
 	if (grab)
 	{
 		var item = instance_place(x, y, par_interactable);
-		if (heldItem == noone && item != noone && item.owner == noone)
+		if (heldItem == noone && item != noone)
 		{
-			heldItem = item;
-			item.owner = id;
-			item.hsp = 0;
-			item.vsp = 0;
+			if (item.owner == noone || item.owner.object_index != obj_hand )
+			{
+				//If it was held by something else, update that
+				if (item.owner != noone) item.owner.heldItem = noone;
+				
+				heldItem = item;
+				item.owner = id;
+				item.hsp = 0;
+				item.vsp = 0;
+				item.grabOffsetX = item.x - x;
+				item.grabOffsetY = item.y - y;
+				
+				heldItem.grabFunction();
+			}
 		}
 		
 		//Graphics
@@ -73,8 +89,10 @@ function handGrabbing()
 		{
 			//Let go of item and inherit speed
 			heldItem.owner = noone;
-			heldItem.hsp = hsp*throwMultiplier;
-			heldItem.vsp = vsp*throwMultiplier;
+			heldItem.hsp = hsp*throwMultiplier / heldItem.weight;
+			heldItem.vsp = vsp*throwMultiplier / heldItem.weight;
+			
+			heldItem.releaseFunction();
 			
 			//Clear player reference to item
 			heldItem = noone;

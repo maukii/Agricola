@@ -1,2 +1,2 @@
-#macro PLAYER_AMOUNT 3
+#macro PLAYER_AMOUNT 1
 #macro GRV 0.3

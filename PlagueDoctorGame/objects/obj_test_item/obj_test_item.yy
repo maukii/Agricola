@@ -1,12 +1,15 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_test_item",
+    "path": "sprites/spr_test_item/spr_test_item.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_interactable",
-    "path": "objects/par_interactable/par_interactable.yy",
+    "name": "par_grabbable",
+    "path": "objects/par_grabbable/par_grabbable.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -20,18 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parents",
-    "path": "folders/Objects/Parents.yy",
+    "name": "Tools",
+    "path": "folders/Objects/Tools.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_draggable",
+  "name": "obj_test_item",
   "tags": [],
   "resourceType": "GMObject",
 }

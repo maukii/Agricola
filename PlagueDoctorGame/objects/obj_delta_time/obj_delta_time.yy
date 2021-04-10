@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Logic",
+    "path": "folders/Objects/Logic.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_delta_time",

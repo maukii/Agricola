@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_interactable",
-    "path": "objects/par_interactable/par_interactable.yy",
+    "name": "par_physics",
+    "path": "objects/par_physics/par_physics.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -31,7 +31,7 @@
     "path": "folders/Objects/Parents.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_draggable",
+  "name": "par_interactable",
   "tags": [],
   "resourceType": "GMObject",
 }

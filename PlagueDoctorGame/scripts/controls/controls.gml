@@ -11,7 +11,7 @@ function getControllers()
 		if (gamepad_is_connected(i))
 		{
 			if (!arrayContains(global.controllers, i))
-			{ array_push(global.controllers, i); }
+				{ array_push(global.controllers, i); }
 		} else
 		{
 			global.controller = -1;

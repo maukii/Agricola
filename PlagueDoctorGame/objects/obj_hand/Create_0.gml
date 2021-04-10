@@ -31,7 +31,6 @@ enum frames
 
 function handMovement()
 {	
-	//This is ass :DDD
 	if (neutral)
 	{
 		hsp = 0;
@@ -43,20 +42,45 @@ function handMovement()
 		vsp = lengthdir_y(abs(joyV*spd), moveDir)
 	}
 	
-	//Restrict to bounds
+	//Restrict movement to bounds
 	x = clamp(x + hsp*delta, bounds[0], bounds[2]);
 	y = clamp(y + vsp*delta, bounds[1], bounds[3]);
 }
 
 //Grabbing stuff
+heldItem = noone;
+throwMultiplier = 2;
+
 function handGrabbing()
 {
 	if (grab)
 	{
+		var item = instance_place(x, y, par_interactable);
+		if (heldItem == noone && item != noone && item.owner == noone)
+		{
+			heldItem = item;
+			item.owner = id;
+			item.hsp = 0;
+			item.vsp = 0;
+		}
+		
+		//Graphics
 		image_index = frames.grab;
 	}
 	else if (release)
 	{
+		if (heldItem != noone)
+		{
+			//Let go of item and inherit speed
+			heldItem.owner = noone;
+			heldItem.hsp = hsp*throwMultiplier;
+			heldItem.vsp = vsp*throwMultiplier;
+			
+			//Clear player reference to item
+			heldItem = noone;
+		}
+		
+		//Graphics
 		image_index = frames.idle;
 	}
 }

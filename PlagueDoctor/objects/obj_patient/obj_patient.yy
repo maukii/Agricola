@@ -1,12 +1,15 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_man",
+    "path": "sprites/spr_man/spr_man.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_grabbable",
-    "path": "objects/par_grabbable/par_grabbable.yy",
+    "name": "par_draggable",
+    "path": "objects/par_draggable/par_draggable.yy",
   },
   "physicsObject": true,
   "physicsSensor": false,

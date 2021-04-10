@@ -1,5 +1,7 @@
 event_inherited();
 
+reorient = true;
+
 function checkHangers()
 {
 	if (owner == noone)
@@ -20,6 +22,12 @@ stepFunction = function()
 	checkHangers();
 	applyPhysics();
 };
+
+grabFunction = function()
+{
+	grabOffsetX = 0;
+	grabOffsetY = 0;
+}
 
 function movementRotation()
 {

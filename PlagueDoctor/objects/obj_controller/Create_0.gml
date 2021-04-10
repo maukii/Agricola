@@ -4,9 +4,11 @@ var bottomBoundHeight = 360;
 var playerBounds =
 [
 	[0, 0, sideBoundWidth, viewHeight],
-	[viewWidth - sideBoundWidth, 0, viewWidth, viewHeight],
-	[0, viewHeight - bottomBoundHeight, viewWidth, viewHeight]
+	[0, viewHeight - bottomBoundHeight, viewWidth, viewHeight],
+	[viewWidth - sideBoundWidth, 0, viewWidth, viewHeight]
 ];
+
+var hands = [spr_hand_01, spr_hand_02, spr_hand_03];
 
 for (var i = 0; i < PLAYER_AMOUNT; ++i)
 {
@@ -19,4 +21,5 @@ for (var i = 0; i < PLAYER_AMOUNT; ++i)
 	plr.controller = global.controllers[i];
 	plr.bounds = playerBounds[i];
 	plr.image_angle = 90*i;
+	plr.sprite_index = hands[i];
 }

@@ -4,7 +4,6 @@ movementRotation();
 
 if (owner != noone)
 {
-	x = owner.x;
-	y = owner.y;
-	image_angle = owner.image_angle;
+	x = owner.x + grabOffsetX;
+	y = owner.y + grabOffsetY;
 }

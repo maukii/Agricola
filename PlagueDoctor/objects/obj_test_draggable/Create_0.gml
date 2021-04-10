@@ -1,3 +1,3 @@
 event_inherited();
 
-weight = 5;
+weight = 4;

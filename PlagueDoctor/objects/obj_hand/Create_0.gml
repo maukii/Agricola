@@ -57,6 +57,19 @@ function handMovement()
 heldItem = noone;
 throwMultiplier = 2;
 
+function grabItem(item)
+{
+	heldItem = item;
+	item.owner = id;
+	item.hsp = 0;
+	item.vsp = 0;
+	item.grabOffsetX = item.x - x;
+	item.grabOffsetY = item.y - y;
+				
+	if (item.reorient)
+		{ item.image_angle = image_angle + 90; }
+}
+
 function handGrabbing()
 {
 	if (grab)
@@ -69,12 +82,7 @@ function handGrabbing()
 				//If it was held by something else, update that
 				if (item.owner != noone) item.owner.heldItem = noone;
 				
-				heldItem = item;
-				item.owner = id;
-				item.hsp = 0;
-				item.vsp = 0;
-				item.grabOffsetX = item.x - x;
-				item.grabOffsetY = item.y - y;
+				grabItem(item);
 				
 				heldItem.grabFunction();
 			}

@@ -1,6 +1,5 @@
 event_inherited();
 
-applyPhysics();
 movementRotation();
 
 if (owner != noone)

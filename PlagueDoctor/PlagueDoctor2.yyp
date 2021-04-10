@@ -32,6 +32,7 @@
     {"id":{"name":"par_interactable","path":"objects/par_interactable/par_interactable.yy",},"order":1,},
     {"id":{"name":"spr_hand","path":"sprites/spr_hand/spr_hand.yy",},"order":0,},
     {"id":{"name":"spr_hand_01","path":"sprites/spr_hand_01/spr_hand_01.yy",},"order":1,},
+    {"id":{"name":"Floor","path":"sprites/Floor/Floor.yy",},"order":5,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":1,},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":0,},
     {"id":{"name":"obj_test_item","path":"objects/obj_test_item/obj_test_item.yy",},"order":0,},

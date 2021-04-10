@@ -19,7 +19,7 @@ function applyPhysics()
 		bounceFunction();
 	}
 		
-	if (y + vsp > viewHeight)
+	if (y + vsp > viewHeight - 64)
 	{
 		if (vsp > bounceThreshold)
 		{

@@ -1,2 +1,2 @@
 //DEBUG
-draw_text(0, 0, global.controllers);
+//draw_text(0, 0, global.controllers);

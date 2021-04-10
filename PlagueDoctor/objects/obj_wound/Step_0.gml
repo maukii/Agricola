@@ -1,8 +1,4 @@
-offset =
-{
-	x : 120,
-	y : 30,
-}
+x = obj_patient.drawX + offset.x;
+y = obj_patient.drawY + offset.y;
 
-x = obj_patient.x + offset.x;
-y = obj_patient.y + offset.y;
+task();

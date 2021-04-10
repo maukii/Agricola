@@ -70,6 +70,22 @@ function grabItem(item)
 		{ item.image_angle = image_angle + 90; }
 }
 
+function releaseItem()
+{
+	if (heldItem != noone)
+	{
+		//Let go of item and inherit speed
+		heldItem.owner = noone;
+		heldItem.hsp = hsp*throwMultiplier / heldItem.weight;
+		heldItem.vsp = vsp*throwMultiplier / heldItem.weight;
+			
+		heldItem.releaseFunction();
+			
+		//Clear player reference to item
+		heldItem = noone;
+	}
+}
+
 function handGrabbing()
 {
 	if (grab)
@@ -93,18 +109,7 @@ function handGrabbing()
 	}
 	else if (release)
 	{
-		if (heldItem != noone)
-		{
-			//Let go of item and inherit speed
-			heldItem.owner = noone;
-			heldItem.hsp = hsp*throwMultiplier / heldItem.weight;
-			heldItem.vsp = vsp*throwMultiplier / heldItem.weight;
-			
-			heldItem.releaseFunction();
-			
-			//Clear player reference to item
-			heldItem = noone;
-		}
+		releaseItem();
 		
 		//Graphics
 		image_index = frames.idle;

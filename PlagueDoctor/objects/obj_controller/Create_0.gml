@@ -23,3 +23,7 @@ for (var i = 0; i < PLAYER_AMOUNT; ++i)
 	plr.image_angle = 90*i;
 	plr.sprite_index = hands[i];
 }
+
+//Moosik
+if (!audio_is_playing(mus_gameplay))
+	{ audio_play_sound(mus_gameplay, 0, false); }

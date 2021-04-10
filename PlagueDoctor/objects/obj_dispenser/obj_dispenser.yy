@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_pot_leech",
-    "path": "sprites/spr_pot_leech/spr_pot_leech.yy",
+    "name": "spr_pot",
+    "path": "sprites/spr_pot/spr_pot.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,6 +27,7 @@
   "properties": [
     {"varType":6,"value":"\"leech\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[
         "\"leech\"",
+        "\"thread\"",
       ],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"item","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],

@@ -3,6 +3,11 @@ switch (item)
 {
 	case "leech":
 		objectToDispense = obj_leech;
-		sprite_index = spr_pot_leech;
+		image_index = 0;
+	break;
+	
+	case "thread":
+		objectToDispense = obj_thread;
+		image_index = 1;
 	break;
 }

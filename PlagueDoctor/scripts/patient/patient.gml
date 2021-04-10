@@ -42,26 +42,26 @@ function StartSymptom(index)
 	switch (index)
 	{
 		case Tasks.BadBlood:
-			show_message("Starting: BadBlood");
+			show_debug_message("Starting: BadBlood");
 			break;
 		case Tasks.Amputate:
-			show_message("Starting: Amputate");
+			show_debug_message("Starting: Amputate");
 			break;
 		case Tasks.Operate:
-			show_message("Starting: Operate");
+			show_debug_message("Starting: Operate");
 			CreateWound();
 			break;
 		case Tasks.MixPotion:
-			show_message("Starting: MixPotion");
+			show_debug_message("Starting: MixPotion");
 			break;
 		case Tasks.Test1:
-			show_message("Starting: Test1");
+			show_debug_message("Starting: Test1");
 			break;
 		case Tasks.Test2:
-			show_message("Starting: Test2");
+			show_debug_message("Starting: Test2");
 			break;
 		case Tasks.Test3:
-			show_message("Starting: Test3");
+			show_debug_message("Starting: Test3");
 			break;
 	}
 }
@@ -70,4 +70,13 @@ function CreateWound()
 {
 	var wound = instance_create_layer(x,y, "Patient", obj_wound);
 	wound.depth = -1;
+}
+
+
+global.patientHealthMax = 1080;
+global.patientHealth = global.patientHealthMax;
+
+function healPatient(amount)
+{
+	global.patientHealth = min(global.patientHealth + amount, global.patientHealthMax);
 }

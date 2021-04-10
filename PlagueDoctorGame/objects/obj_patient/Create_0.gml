@@ -1,4 +1,5 @@
-/// @description Generate array of Symptoms for players to cure
+event_inherited();
+
 difficulty = 4;
 pati = new Patient(difficulty);
 

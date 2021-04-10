@@ -1,0 +1,1 @@
+global.cameraShakeScale = 1;

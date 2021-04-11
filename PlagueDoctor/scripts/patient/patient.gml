@@ -69,7 +69,7 @@ function StartSymptom(index)
 function CreateWound()
 {
 	var wound = instance_create_layer(x,y, "Patient", obj_wound);
-	wound.depth = -1;
+	wound.depth = obj_patient.depth - 1;
 }
 
 

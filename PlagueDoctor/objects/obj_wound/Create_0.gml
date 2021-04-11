@@ -2,11 +2,15 @@ stepAmount = 3;
 curStep = 0;
 healPerTask = 60;
 
+image_xscale = 0.5;
+image_yscale = 0.5;
+
 task = function()
 {
 	if (place_meeting(x, y, obj_knife))
 	{
 		incrementStep();
+		image_index = 1;
 	}
 };
 
@@ -17,7 +21,6 @@ function incrementStep()
 	if (curStep == stepAmount)
 	{
 		//Mark this as done somehow
-		instance_destroy();
 		global.tasksCompleted++;
 		checkCompletion();
 	}
@@ -32,13 +35,19 @@ function incrementStep()
 				var tunkki = instance_place(x, y, obj_tunkki);
 				if (tunkki != noone && tunkki.owner != noone)
 				{
+					image_index = 2;
 					var leech = instance_place(x, y, obj_leech);
 					if (leech != noone)
 					{
 						leech.owner.releaseItem();
 						instance_destroy(leech);
 						incrementStep();
+						image_index = 2;
 					}
+				}
+				else
+				{
+					image_index = 1;
 				}
 			}
 		break;
@@ -53,6 +62,8 @@ function incrementStep()
 					
 					needle.hasThread = false;
 					needle.image_index = 0;
+					
+					image_index = 3;
 				}
 			}
 		break;
@@ -63,6 +74,6 @@ function incrementStep()
 //Graphics
 offset =
 {
-	x : 120,
-	y : 30,
+	x : 140,
+	y : 40,
 }

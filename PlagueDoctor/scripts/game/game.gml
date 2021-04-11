@@ -1,4 +1,4 @@
-#macro PLAYER_AMOUNT 1
+#macro PLAYER_AMOUNT 3
 #macro GRV 0.3
 
 global.taskAmount = 1;
@@ -8,6 +8,6 @@ function checkCompletion()
 {
 	if (global.tasksCompleted == global.taskAmount)
 	{
-		show_message("ayo, you won my dude");
+		global.patientHealth = global.patientHealthMax;
 	}
 }
